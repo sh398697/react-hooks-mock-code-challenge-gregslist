@@ -130,3 +130,13 @@ main {
   font-family: serif;
   font-size: 1rem;
 }
+
+.ascending {
+  background: black;
+  color: white
+}
+
+.descending {
+  background: white;
+  color: black;
+}

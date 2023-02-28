@@ -21,7 +21,7 @@ function Header({query, onChange, ascending, descending}) {
         gregslist
       </h1>
       <Search query={query} onChange={onChange}/>
-      <button onClick={handleClick}>{isDesc ? "Descending" : "Ascending"}</button>
+      <button className={isDesc ? "descending" : "ascending"} onClick={handleClick}>{isDesc ? "Descending" : "Ascending"}</button>
 
     </header>
   );
