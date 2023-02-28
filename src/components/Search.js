@@ -13,7 +13,7 @@ function Search() {
         id="search"
         placeholder="search free stuff"
         value={""}
-        onChange={(e) => console.log(e.target.value)}
+        onChange={(e) => onChange(e)}
       />
       <button type="submit">🔍</button>
     </form>
