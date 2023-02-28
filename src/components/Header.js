@@ -1,7 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import Search from "./Search";
 
-function Header({query, onChange}) {
+function Header({query, onChange, ascending, descending}) {
+  const [isDesc, setIsDesc] = useState(false)
+  function handleClick(){
+    setIsDesc((isDesc) => !isDesc)
+    if(isDesc === false) {
+      descending()
+    }
+    else{
+      ascending()
+    }
+  }
   return (
     <header>
       <h1>
@@ -11,6 +21,8 @@ function Header({query, onChange}) {
         gregslist
       </h1>
       <Search query={query} onChange={onChange}/>
+      <button onClick={handleClick}>{isDesc ? "Descending" : "Ascending"}</button>
+
     </header>
   );
 }

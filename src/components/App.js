@@ -33,9 +33,23 @@ function onChangeEvent(e) {
   setQuery(e.target.value)
 }
 
+function ascending(){
+  let data = [...freeItem]
+  if(data.length > 0) {
+    let result = data.sort((a,b) => a.location.localeCompare(b.location))
+    setFreeItem(result)
+  }
+}
+function descending(){
+  let data = [...freeItem]
+  if(data.length > 0) {
+    let result = data.sort((a,b) => b.location.localeCompare(a.location))
+    setFreeItem(result)
+  }
+}
   return (
     <div className="app">
-      <Header  query={query} onChange={onChangeEvent}/>
+      <Header  query={query} onChange={onChangeEvent} ascending={ascending} descending={descending}/>
       <ListingsContainer onDelete={onDelete} search={search}/>
     </div>
   );
